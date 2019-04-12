@@ -1,0 +1,89 @@
+<?php
+echo "Q1):_____________________________________________________<br>";
+$string = "Hello i am in Kellton.Kellton has always stayed true to its image.<br>";
+echo $string;
+echo "ans):<br>";
+echo str_replace("Kellton","KelltonTech",$string);
+echo "<br>";
+echo "<br>";
+//////////////////////////////////////////
+echo "Q2):_____________________________________________________<br>";
+function static_var()
+{   
+	static $num = 5;
+	$sum = 2;
+    
+	$num++;
+	$sum++;
+	 
+	echo "$num,$sum,<br>";
+}
+// first function call 
+static_var();
+ 
+// second function call 
+static_var();
+
+echo "num is a local varaible where as sum is static variable ,local variables are destroyed when we exist function where as static varaible still holds the value";
+echo "5+1=6,2+1=3 in second call 6+1=7 and as sum is initilized again 2+1=3";
+echo "<br>";
+echo "<br>";
+//////////////////////////////////////////////
+echo "Q3):_____________________________________________________<br>";
+$x = 4;
+$y = 3;
+function myfun($x = 3, $y = 4)
+{
+    echo $x,$y;
+    $z = $x+$y/$y+$x;
+    echo "$z";
+    echo "<br>";
+} 
+echo $x;
+echo "<br>";
+echo $y;
+echo "<br>";
+echo $z; 
+echo "<br>";
+myfun($x, $y);
+echo "<br>";
+myfun();
+echo "<br>";
+echo "the value of x and y are from global x and so they are printed as 4 and 3 and z is not defined in global scope";
+echo "<br>";
+echo "x=3 and y=4 are default parameters these are provided when funcntion is called without passing parametres where as when we call with parametres those are only used ";
+echo "<br>";
+//////////////////////////////////////////////
+echo "Q4):_____________________________________________________<br>";
+// Write a PHP function to test whether a number is greater than 40, 30 or 20 using ternary operator.
+//$value = ($condition) ? 'Truthy Value' : 'Falsey Value';
+
+function ternaryfunc($input){
+    $string;
+  
+
+    ($input>20) ? ($input>30)?($input>40)?$string="number is greater than 40":$string="number is between 40 and 30":$string="number is between 20 and 30" : $string="number less than or equal 20";
+    echo $string;
+}
+ternaryfunc(41);
+echo "<br>";
+ternaryfunc(31);
+echo "<br>";
+ternaryfunc(21);
+echo "<br>";
+
+//////////////////////////////////////////////
+echo "Q5):_____________________________________________________<br>";
+
+$string1 = "In   Kellton     their  are   infinite possibilities";
+echo preg_replace('/\s/', ' ', $string1);
+/////////////////////////////////////////////
+echo "<br>";
+echo "Q6):_____________________________________________________<br>";
+
+echo date("l d F y h:i:s A");
+echo "<br>";
+echo date("l d F y h:i:s A",time()+(5*24*60*60));
+
+
+?>
